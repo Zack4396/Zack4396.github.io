@@ -2,6 +2,23 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
+      <loc>https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/stress-ng/</loc><lastmod>2024-04-19T21:14:29&#43;08:00</lastmod></url><url>
+      <loc>https://zack4396.github.io/</loc><lastmod>2024-04-19T21:14:29&#43;08:00</lastmod><xhtml:link
+            rel="alternate"
+            hreflang="en"
+            href="https://zack4396.github.io/en/"
+            /><xhtml:link
+          rel="alternate"
+          hreflang="zh-cn"
+          href="https://zack4396.github.io/"
+          /></url><url>
+      <loc>https://zack4396.github.io/documentation/operating-system/002-bootloader/</loc><lastmod>2024-04-19T21:13:25&#43;08:00</lastmod></url><url>
+      <loc>https://zack4396.github.io/documentation/operating-system/001-linux/001-kernel/</loc><lastmod>2024-04-19T21:13:25&#43;08:00</lastmod></url><url>
+      <loc>https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/</loc><lastmod>2024-04-19T21:13:25&#43;08:00</lastmod></url><url>
+      <loc>https://zack4396.github.io/documentation/operating-system/003-fuchsia/</loc><lastmod>2024-04-19T21:13:25&#43;08:00</lastmod></url><url>
+      <loc>https://zack4396.github.io/documentation/operating-system/001-linux/</loc><lastmod>2024-04-19T21:13:25&#43;08:00</lastmod></url><url>
+      <loc>https://zack4396.github.io/documentation/programming/</loc><lastmod>2024-04-19T21:13:25&#43;08:00</lastmod></url><url>
+      <loc>https://zack4396.github.io/documentation/operating-system/</loc><lastmod>2024-04-19T21:13:25&#43;08:00</lastmod></url><url>
       <loc>https://zack4396.github.io/categories/</loc><xhtml:link
             rel="alternate"
             hreflang="en"
@@ -20,15 +37,6 @@
           hreflang="zh-cn"
           href="https://zack4396.github.io/collections/"
           /></url><url>
-      <loc>https://zack4396.github.io/</loc><xhtml:link
-            rel="alternate"
-            hreflang="en"
-            href="https://zack4396.github.io/en/"
-            /><xhtml:link
-          rel="alternate"
-          hreflang="zh-cn"
-          href="https://zack4396.github.io/"
-          /></url><url>
       <loc>https://zack4396.github.io/tags/</loc><xhtml:link
             rel="alternate"
             hreflang="en"
@@ -37,4 +45,5 @@
           rel="alternate"
           hreflang="zh-cn"
           href="https://zack4396.github.io/tags/"
-          /></url></urlset>
+          /></url><url>
+      <loc>https://zack4396.github.io/documentation/</loc><lastmod>2024-04-19T21:13:25&#43;08:00</lastmod></url></urlset>

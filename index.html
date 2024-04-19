@@ -40,13 +40,33 @@
     <div class="header-title">
       <a href="/" title="Somebody"><img loading="lazy" src="/images/hugo-somebody.webp" alt="Somebody" data-title="Somebody" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Somebody</span></a><span class="header-subtitle"></span></div>
     <nav>
-      <ul class="menu"><li class="menu-item">
+      <ul class="menu"><li class="menu-item has-children">
               <a
                 class="menu-link"
                 href="/categories/documentation/"
                 title="文档"
                 
-              ><i class="fa-regular fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 文档</a></li><li class="menu-item">
+              ><i class="fa-regular fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 文档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/documentation/operating-system/"
+                          title="关于操作系统"
+                          
+                        ><i class="fa-solid fa-desktop fa-fw fa-sm" aria-hidden="true"></i> 操作系统相关</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/documentation/programming/"
+                          title="关于编程语言"
+                          
+                        ><i class="fa-solid fa-keyboard fa-fw fa-sm" aria-hidden="true"></i> 编程语言相关</a>
+                      </li></ul></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/categories/roadmap/"
@@ -111,12 +131,35 @@
     <nav>
       <ul class="menu" id="menu-mobile"><li
               class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/categories/documentation/"
-                  title="文档"
-                  
-                ><i class="fa-regular fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 文档</a></li><li
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/categories/documentation/"
+                    title="文档"
+                    
+                  ><i class="fa-regular fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 文档</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/documentation/operating-system/"
+                          title="关于操作系统"
+                          
+                        ><i class="fa-solid fa-desktop fa-fw fa-sm" aria-hidden="true"></i> 操作系统相关</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/documentation/programming/"
+                          title="关于编程语言"
+                          
+                        ><i class="fa-solid fa-keyboard fa-fw fa-sm" aria-hidden="true"></i> 编程语言相关</a>
+                      </li></ul></li><li
               class="menu-item"
             ><a
                   class="menu-link"
@@ -173,6 +216,10 @@
 </header><main class="container"><div class="page home posts"><div class="home-profile"><div class="home-avatar"><a href="/categories/documentation/" title="文档"><img loading="lazy" src="/images/hugo-somebody.webp" alt="Somebody" data-title="Somebody" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></div><h1 class="home-title"></h1><p class="home-subtitle"><span class="d-none">哈喽 👋, 整点甜甜圈吃吃吧</span>
         <span id="typeit-profile-subtitle" class="typeit"></span></p><div class="links"><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/documentation/operating-system/001-linux/099-tools/stress-ng/">Linux 测试工具 stress-ng</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="Somebody" data-title="Somebody" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Somebody</span></span>&nbsp;<span class="post-publish" title='2024-04-19 20:11:20'>发布于 <time datetime="2024-04-19">2024-04-19</time></span></div><div class="content"><p><strong>本文介绍了如何使用 stress-ng</strong></p></div><div class="post-footer">
+    <a href="/documentation/operating-system/001-linux/099-tools/stress-ng/">阅读全文</a></div>
+</article>
 </div></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.122.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.2"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>

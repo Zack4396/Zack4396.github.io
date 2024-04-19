@@ -5,21 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>所有合集 | Somebody</title><meta name="author" content="Somebody">
+    <title>所有Bootloader | Somebody</title><meta name="author" content="Somebody">
 <meta name="author-link" content="">
-<meta name="description" content="工作记录 - 某人" /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="Collections">
-<meta itemprop="description" content="工作记录 - 某人"><meta property="og:title" content="Collections" />
-<meta property="og:description" content="工作记录 - 某人" />
+<meta name="description" content="Bootloader." /><meta name="keywords" content='Bootloader' /><meta itemprop="name" content="Bootloader">
+<meta itemprop="description" content="Bootloader."><meta property="og:title" content="Bootloader" />
+<meta property="og:description" content="Bootloader." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://zack4396.github.io/collections/" /><meta property="og:image" content="https://zack4396.github.io/images/apple-devices-preview.webp" />
+<meta property="og:url" content="https://zack4396.github.io/documentation/operating-system/002-bootloader/" /><meta property="og:image" content="https://zack4396.github.io/images/apple-devices-preview.webp" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://zack4396.github.io/images/apple-devices-preview.webp" /><meta name="twitter:title" content="Collections"/>
-<meta name="twitter:description" content="工作记录 - 某人"/>
+<meta name="twitter:image" content="https://zack4396.github.io/images/apple-devices-preview.webp" /><meta name="twitter:title" content="Bootloader"/>
+<meta name="twitter:description" content="Bootloader."/>
 <meta name="application-name" content="Somebody">
 <meta name="apple-mobile-web-app-title" content="Somebody"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#2d89ef"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF7359"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://zack4396.github.io/collections/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF7359"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://zack4396.github.io/documentation/operating-system/002-bootloader/" /><link rel="alternate" href="/documentation/operating-system/002-bootloader/index.xml" type="application/rss+xml" title="Somebody">
+  <link rel="feed" href="/documentation/operating-system/002-bootloader/index.xml" type="application/rss+xml" title="Somebody"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript></head>
   <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="wide"><header class="desktop animate__faster" id="header-desktop">
@@ -27,7 +28,7 @@
     <div class="header-title">
       <a href="/" title="Somebody"><img loading="lazy" src="/images/hugo-somebody.webp" alt="Somebody" data-title="Somebody" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Somebody</span></a><span class="header-subtitle"></span></div>
     <nav>
-      <ul class="menu"><li class="menu-item has-children">
+      <ul class="menu"><li class="menu-item active has-children">
               <a
                 class="menu-link"
                 href="/categories/documentation/"
@@ -36,7 +37,7 @@
               ><i class="fa-regular fa-newspaper fa-fw fa-sm" aria-hidden="true"></i> 文档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
                 <ul class="sub-menu">
                   <li
-                        class="menu-item"
+                        class="menu-item active"
                       >
                         <a
                           class="menu-link"
@@ -77,7 +78,7 @@
                           
                         ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
                       </li><li
-                        class="menu-item active"
+                        class="menu-item"
                       >
                         <a
                           class="menu-link"
@@ -98,11 +99,7 @@
           <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li><li class="menu-item language-switch">
             <span role="button" aria-label="选择语言" title="选择语言"><i class="fa-solid fa-language fa-fw" aria-hidden="true"></i></span>
-            <ul class="sub-menu"><li class="menu-item">
-                      <a href="/en/collections/" class="menu-link" title="English">English</a>
-                    </li><li class="menu-item">
-                      <span class="menu-link text-secondary" title="简体中文">简体中文</span>
-                    </li></ul>
+            <ul class="sub-menu"><li class="menu-item">没有更多翻译</li></ul>
           </li></ul>
     </nav>
   </div>
@@ -117,7 +114,7 @@
     </div>
     <nav>
       <ul class="menu" id="menu-mobile"><li
-              class="menu-item"
+              class="menu-item active"
             ><span class="nested-item">
                   <a
                     class="menu-link"
@@ -129,7 +126,7 @@
                 </span>
                 <ul class="sub-menu">
                   <li
-                        class="menu-item"
+                        class="menu-item active"
                       >
                         <a
                           class="menu-link"
@@ -175,7 +172,7 @@
                           
                         ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
                       </li><li
-                        class="menu-item active"
+                        class="menu-item"
                       >
                         <a
                           class="menu-link"
@@ -195,14 +192,17 @@
                       </li></ul></li><li class="menu-item menu-system">
           <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span><span class="menu-system-item language-switch">
               <span role="button" aria-label="选择语言" title="选择语言">简体中文<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i></span>
-              <select class="language-select" onchange="location = this.value;"><option value="/en/collections/">English</option><option value="/collections/" selected disabled>简体中文</option></select>
+              <select class="language-select" onchange="location = this.value;"><option disabled>没有更多翻译</option></select>
             </span></li>
       </ul>
     </nav>
   </div>
-</header><main class="container"><div class="page archive"><h1 class="single-title animate__animated animate__pulse animate__faster"><i class="fa-solid fa-layer-group fa-fw me-1" aria-hidden="true"></i>所有合集 <sup>0</sup>
-    </h1><div class="collections-card"></div>
-</div></main><footer class="footer">
+</header><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/documentation/" title="文档。">文档</a></li><li class="breadcrumb-item"><a href="/documentation/operating-system/" title="操作系统相关知识。">操作系统相关</a></li><li class="breadcrumb-item active" aria-current="page">Bootloader</li>
+    </ol>
+  </nav><main class="container"><div class="page archive">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster"><i class="fa-solid fa-feather fa-fw me-1" aria-hidden="true"></i>所有Bootloader <sup>0</sup>
+      </h1></div></div></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.122.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.2"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">
