@@ -46,7 +46,8 @@ ls src/stressapptest
 ```bash
 # 指定 对应平台的 GCC 路径
 MY_CC=/opt/toolchain/aarch64/bin/aarch64-cros-linux-gnu-gcc
-
+```
+```bash
 MY_HOST=&#34;$(echo $(basename $MY_CC) | sed &#39;s/-gcc$//&#39;)&#34;
 MY_CXX=&#34;$(dirname $MY_CC)/$MY_HOST-g&#43;&#43;&#34;
 

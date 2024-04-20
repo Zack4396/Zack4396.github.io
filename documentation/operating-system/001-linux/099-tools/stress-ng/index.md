@@ -48,19 +48,13 @@ ls stress-ng
 ```bash
 # 指定 对应平台的 GCC 路径
 MY_CC=/opt/toolchain/aarch64/bin/aarch64-cros-linux-gnu-gcc
-
+```
+```bash
 MY_HOST=&#34;$(echo $(basename $MY_CC) | sed &#39;s/-gcc$//&#39;)&#34;
 MY_CXX=&#34;$(dirname $MY_CC)/$MY_HOST-g&#43;&#43;&#34;
 
-# 注: CFLAGS=-D__GLIBC_HAVE_KERNEL_RSEQ
-# - 解决 &#34;struct rseq&#34; redefinition的问题
-# sys/rseq.h:102:8: error: redefinition of ‘struct rseq’
-#   102 | struct rseq
-#       |        ^~~~
-# In file included from stress-rseq.c:27:
-# linux/rseq.h:62:8: note: originally defined here
-#    62 | struct rseq {
-#       |        ^~~~
+# 编译报错: error: redefinition of ‘struct rseq’ 
+# 需添加 &#39;CFLAGS=-D__GLIBC_HAVE_KERNEL_RSEQ&#39; 
 make clean &amp;&amp; make CC=$MY_CC CXX=$MY_CXX CFLAGS=-D__GLIBC_HAVE_KERNEL_RSEQ
 
 # 查看生成文件
