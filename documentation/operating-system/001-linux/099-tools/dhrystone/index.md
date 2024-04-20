@@ -8,8 +8,6 @@
 [fossies.org]: https://fossies.org/linux/privat/old/dhrystone-2.1.tar.gz/
 [v2.1]: https://fossies.org/linux/privat/old/dhrystone-2.1.tar.gz/
 
-
-
 ## 获取源码
 
 仓库地址：[fossies.org], 最新版本是 [V2.1]
@@ -20,8 +18,6 @@
 wget https://fossies.org/linux/privat/old/dhrystone-2.1.tar.gz
 ```
 
-
-
 ### 解压
 
 ```bash
@@ -29,8 +25,6 @@ mkdir dhrystone
 tar -zxvf dhrystone-2.1.tar.gz -C dhrystone
 cd dhrystone
 ```
-
-
 
 ## 编译源码
 
@@ -61,11 +55,9 @@ ls dhrystone
 
 ## 工具使用
 
-### 命令行参数 
+### 命令行参数
 
 &gt; 无
-
-
 
 ### 用途
 
@@ -75,7 +67,7 @@ ls dhrystone
 
 关于测试日志，有几点我们可以关注一下
 
-1. **Dhrystones per Second** 
+1. **Dhrystones per Second**
 
    &gt; 其数值表示每秒钟执行 Dhrystone 的次数
 
@@ -103,8 +95,6 @@ ls dhrystone
 Please give the number of runs through the benchmark: [***此处需要设置运行次数***]
 ...
 ```
-
-
 
 日志
 
@@ -169,10 +159,9 @@ Str_1_Loc:           DHRYSTONE PROGRAM, 1&#39;ST STRING
 Str_2_Loc:           DHRYSTONE PROGRAM, 2&#39;ND STRING
         should be:   DHRYSTONE PROGRAM, 2&#39;ND STRING
 
-Microseconds for one run through Dhrystone:    0.0 
-Dhrystones per Second:                      71332960.0 
+Microseconds for one run through Dhrystone:    0.0
+Dhrystones per Second:                      71332960.0
 ```
-
 
 
 ---

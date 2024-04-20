@@ -1,0 +1,274 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=2"><meta name=robots content="noodp"><title>sysstat | Somebody</title><meta name=author content="Somebody">
+<meta name=author-link content><meta name=description content="本文介绍了如何使用 sysstat"><meta name=keywords content="sysstat"><meta itemprop=name content="sysstat"><meta itemprop=description content="本文介绍了如何使用 sysstat"><meta itemprop=datePublished content="2024-04-20T17:52:58+08:00"><meta itemprop=dateModified content="2024-04-20T20:08:37+08:00"><meta itemprop=wordCount content="1574"><meta itemprop=image content="https://zack4396.github.io/images/apple-devices-preview.webp"><meta itemprop=keywords content="sysstat,"><meta property="og:title" content="sysstat"><meta property="og:description" content="本文介绍了如何使用 sysstat"><meta property="og:type" content="article"><meta property="og:url" content="https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/sysstat/"><meta property="og:image" content="https://zack4396.github.io/images/apple-devices-preview.webp"><meta property="article:section" content="documentation"><meta property="article:published_time" content="2024-04-20T17:52:58+08:00"><meta property="article:modified_time" content="2024-04-20T20:08:37+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://zack4396.github.io/images/apple-devices-preview.webp"><meta name=twitter:title content="sysstat"><meta name=twitter:description content="本文介绍了如何使用 sysstat"><meta name=application-name content="Somebody"><meta name=apple-mobile-web-app-title content="Somebody"><meta name=theme-color data-light=#f8f8f8 data-dark=#252627 content="#f8f8f8"><meta name=msapplication-TileColor content="#2d89ef"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#FF7359><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/sysstat/><link rel=prev href=https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/stream/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=/lib/fontawesome-free/all.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload href=/lib/animate/animate.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"sysstat","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zack4396.github.io\/documentation\/operating-system\/001-linux\/099-tools\/sysstat\/"},"genre":"posts","keywords":"sysstat","wordcount":1574,"url":"https:\/\/zack4396.github.io\/documentation\/operating-system\/001-linux\/099-tools\/sysstat\/","datePublished":"2024-04-20T17:52:58+08:00","dateModified":"2024-04-20T20:08:37+08:00","license":"本站内容采用 CC BY-NC-SA 4.0 国际许可协议。","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Somebody"},"description":""}</script></head><body data-header-desktop=sticky data-header-mobile=auto><script>(window.localStorage?.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("data-theme","dark")</script><div class=wrapper data-page-style=wide><header class="desktop animate__faster" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=Somebody><img loading=lazy src=/images/hugo-somebody.webp alt=Somebody data-title=Somebody class=logo style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'><span class=header-title-text>Somebody</span></a><span class=header-subtitle></span></div><nav><ul class=menu><li class="menu-item active has-children"><a class=menu-link href=/categories/documentation/ title=文档><i class="fa-regular fa-newspaper fa-fw fa-sm" aria-hidden=true></i> 文档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden=true></i><ul class=sub-menu><li class="menu-item active"><a class=menu-link href=/documentation/operating-system/ title=关于操作系统><i class="fa-solid fa-desktop fa-fw fa-sm" aria-hidden=true></i> 操作系统相关</a></li><li class=menu-item><a class=menu-link href=/documentation/programming/ title=关于编程语言><i class="fa-solid fa-keyboard fa-fw fa-sm" aria-hidden=true></i> 编程语言相关</a></li></ul></li><li class=menu-item><a class=menu-link href=/categories/roadmap/ title=个人学习路线><i class="fa-solid fa-map-location-dot fa-fw fa-sm" aria-hidden=true></i> 路线图</a></li><li class="menu-item has-children"><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 归档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden=true></i><ul class=sub-menu><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/collections/><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden=true></i> 合集</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></li><li class="menu-item language-switch"><span role=button aria-label=选择语言 title=选择语言><i class="fa-solid fa-language fa-fw" aria-hidden=true></i></span><ul class=sub-menu><li class=menu-item>没有更多翻译</li></ul></li></ul></nav></div></header><header class="mobile animate__faster" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=Somebody><img loading=lazy src=/images/hugo-somebody.webp alt=/images/hugo-somebody.webp data-title=/images/hugo-somebody.webp class=logo style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'><span class=header-title-text>Somebody</span></a><span class=header-subtitle></span></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><nav><ul class=menu id=menu-mobile><li class="menu-item active"><span class=nested-item><a class=menu-link href=/categories/documentation/ title=文档><i class="fa-regular fa-newspaper fa-fw fa-sm" aria-hidden=true></i> 文档</a>
+<i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden=true></i></span><ul class=sub-menu><li class="menu-item active"><a class=menu-link href=/documentation/operating-system/ title=关于操作系统><i class="fa-solid fa-desktop fa-fw fa-sm" aria-hidden=true></i> 操作系统相关</a></li><li class=menu-item><a class=menu-link href=/documentation/programming/ title=关于编程语言><i class="fa-solid fa-keyboard fa-fw fa-sm" aria-hidden=true></i> 编程语言相关</a></li></ul></li><li class=menu-item><a class=menu-link href=/categories/roadmap/ title=个人学习路线><i class="fa-solid fa-map-location-dot fa-fw fa-sm" aria-hidden=true></i> 路线图</a></li><li class=menu-item><span class=nested-item><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 归档</a>
+<i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden=true></i></span><ul class=sub-menu><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/collections/><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden=true></i> 合集</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li></ul></li><li class="menu-item menu-system"><span class="menu-system-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></span><span class="menu-system-item language-switch">
+<span role=button aria-label=选择语言 title=选择语言>简体中文<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden=true></i></span>
+<select class=language-select onchange="location=this.value"><option disabled>没有更多翻译</option></select></span></li></ul></nav></div></header><nav aria-label=breadcrumb class="breadcrumb-container sticky"><ol class=breadcrumb><li class=breadcrumb-item><a href=/documentation/ title=文档。>文档</a></li><li class=breadcrumb-item><a href=/documentation/operating-system/ title=操作系统相关知识。>操作系统相关</a></li><li class=breadcrumb-item><a href=/documentation/operating-system/001-linux/ title=Linux.>Linux</a></li><li class=breadcrumb-item><a href=/documentation/operating-system/001-linux/099-tools/ title="linux 工具。">linux 工具</a></li><li class="breadcrumb-item active" aria-current=page>Linux 分析工具 sysstat</li></ol></nav><main class=container><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label=合集></aside><article class="page single"><div class=header><h1 class="single-title animate__animated animate__flipInX"><span>sysstat</span></h1></div><div class=post-meta><div class=post-meta-line><span class=post-author><span class=author><img loading=lazy src=/images/avatar.png alt=Somebody data-title=Somebody class=avatar style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'>&nbsp;Somebody</span></span></div><div class=post-meta-line><span title="发布于 2024-04-20 17:52:58"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden=true></i><time datetime=2024-04-20>2024-04-20</time></span>&nbsp;<span title="更新于 2024-04-20 20:08:37"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden=true></i><time datetime=2024-04-20>2024-04-20</time></span>&nbsp;<span title="1574 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden=true></i>约 1600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden=true></i>预计阅读 4 分钟</span>&nbsp;</div></div><div class="details toc" id=toc-static data-kept=false><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fa-solid fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#获取源码>获取源码</a><ul><li><a href=#下载>下载</a></li><li><a href=#解压>解压</a></li></ul></li><li><a href=#编译源码>编译源码</a><ul><li><a href=#编译-x86>编译 x86</a></li><li><a href=#编译-aarch64>编译 aarch64</a></li></ul></li><li><a href=#工具使用>工具使用</a><ul><li><a href=#命令行参数>命令行参数</a></li><li><a href=#用途>用途</a><ul><li><a href=#分析系统>分析系统</a></li></ul></li></ul></li></ul></nav></div></div><div class=content id=content><p><strong>本文介绍了如何使用 sysstat</strong></p><h2 id=获取源码 class=heading-element><a href=#%e8%8e%b7%e5%8f%96%e6%ba%90%e7%a0%81 class=heading-mark></a>获取源码</h2><p>仓库地址：<a href=https://github.com/sysstat/sysstat target=_blank rel="external nofollow noopener noreferrer">Github<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden=true></i></a>, 最新版本是 <a href=https://github.com/sysstat/sysstat/archive/refs/tags/v12.7.5.tar.gz target=_blank rel="external nofollow noopener noreferrer">V12.7.5<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden=true></i></a></p><h3 id=下载 class=heading-element><a href=#%e4%b8%8b%e8%bd%bd class=heading-mark></a>下载</h3><div class=highlight id=id-1><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>wget https://github.com/sysstat/sysstat/archive/refs/tags/v12.7.5.tar.gz </span></span></code></pre></td></tr></table></div></div><h3 id=解压 class=heading-element><a href=#%e8%a7%a3%e5%8e%8b class=heading-mark></a>解压</h3><div class=highlight id=id-2><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>tar -zxvf v12.7.5.tar.gz -C . <span class=o>&amp;&amp;</span> <span class=nb>cd</span> sysstat-12.7.5</span></span></code></pre></td></tr></table></div></div><h2 id=编译源码 class=heading-element><a href=#%e7%bc%96%e8%af%91%e6%ba%90%e7%a0%81 class=heading-mark></a>编译源码</h2><h3 id=编译-x86 class=heading-element><a href=#%e7%bc%96%e8%af%91-x86 class=heading-mark></a>编译 x86</h3><p>略</p><h3 id=编译-aarch64 class=heading-element><a href=#%e7%bc%96%e8%af%91-aarch64 class=heading-mark></a>编译 aarch64</h3><div class=highlight id=id-3><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 指定 对应平台的 GCC 路径</span>
+</span></span><span class=line><span class=cl><span class=nv>MY_CC</span><span class=o>=</span>/opt/toolchain/aarch64/bin/aarch64-cros-linux-gnu-gcc</span></span></code></pre></td></tr></table></div></div><div class=highlight id=id-4><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>MY_HOST</span><span class=o>=</span><span class=s2>&#34;</span><span class=k>$(</span><span class=nb>echo</span> <span class=k>$(</span>basename <span class=nv>$MY_CC</span><span class=k>)</span> <span class=p>|</span> sed <span class=s1>&#39;s/-gcc$//&#39;</span><span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>MY_CXX</span><span class=o>=</span><span class=s2>&#34;</span><span class=k>$(</span>dirname <span class=nv>$MY_CC</span><span class=k>)</span><span class=s2>/</span><span class=nv>$MY_HOST</span><span class=s2>-g++&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=nv>$PATH</span>:<span class=s2>&#34;</span><span class=k>$(</span>dirname <span class=nv>$MY_CC</span><span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>mkdir output
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>SA_DIR</span><span class=o>=</span><span class=sb>`</span><span class=nb>pwd</span><span class=sb>`</span>/output/var/log/sa
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>conf_dir</span><span class=o>=</span><span class=sb>`</span><span class=nb>pwd</span><span class=sb>`</span>/output/etc/kksysconfig
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># NOTE</span>
+</span></span><span class=line><span class=cl><span class=c1># v11.1.2 之前 (2015年), 使用 --disable-man-group</span>
+</span></span><span class=line><span class=cl><span class=c1># v11.1.3 之后 (最新版), 使用 --disable-file-attr</span>
+</span></span><span class=line><span class=cl>./configure <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>  <span class=nv>CC</span><span class=o>=</span><span class=nv>$MY_HOST_CC</span> <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>  --prefix<span class=o>=</span><span class=sb>`</span><span class=nb>pwd</span><span class=sb>`</span>/output --host<span class=o>=</span><span class=nv>$MY_HOST</span> <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>  --disable-file-attr <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>  --disable-documentation
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 更正路径为设备端的路径 &#34;/data/output&#34;</span>
+</span></span><span class=line><span class=cl>sed -i <span class=s1>&#39;/-DSA_DIR=\\\&#34;$(SA_DIR)\\\&#34; -DSADC_PATH=\\\&#34;$(SADC_PATH)\\\&#34;/i\MY_TEMP = /data/output&#39;</span> Makefile
+</span></span><span class=line><span class=cl>sed -i <span class=s1>&#39;s/-DSA_DIR=\\\&#34;$(SA_DIR)\\\&#34; -DSADC_PATH=\\\&#34;$(SADC_PATH)\\\&#34;/-DSA_DIR=\\\&#34;$(MY_TEMP)\\\&#34; -DSADC_PATH=\\\&#34;$(MY_TEMP)\/lib\/sa\/sadc\\\&#34;/&#39;</span> Makefile
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>make clean <span class=o>&amp;&amp;</span> make <span class=o>&amp;&amp;</span> make install
+</span></span><span class=line><span class=cl><span class=nb>unset</span> SA_DIR
+</span></span><span class=line><span class=cl><span class=nb>unset</span> conf_dir</span></span></code></pre></td></tr></table></div></div><p>编译生成文件</p><div class=highlight id=id-5><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>xx@xx:~/linux-tools/sysstat-12.7.5$ tree output
+</span></span><span class=line><span class=cl>output/
+</span></span><span class=line><span class=cl>├── bin
+</span></span><span class=line><span class=cl>│   ├── cifsiostat
+</span></span><span class=line><span class=cl>│   ├── iostat
+</span></span><span class=line><span class=cl>│   ├── mpstat
+</span></span><span class=line><span class=cl>│   ├── pidstat
+</span></span><span class=line><span class=cl>│   ├── sadf
+</span></span><span class=line><span class=cl>│   ├── sar
+</span></span><span class=line><span class=cl>│   └── tapestat
+</span></span><span class=line><span class=cl>├── etc
+</span></span><span class=line><span class=cl>│   └── kksysconfig
+</span></span><span class=line><span class=cl>│       ├── sysstat
+</span></span><span class=line><span class=cl>│       └── sysstat.ioconf
+</span></span><span class=line><span class=cl>├── lib
+</span></span><span class=line><span class=cl>│   └── sa
+</span></span><span class=line><span class=cl>│       ├── sa1
+</span></span><span class=line><span class=cl>│       ├── sa2
+</span></span><span class=line><span class=cl>│       └── sadc
+</span></span><span class=line><span class=cl>├── share
+</span></span><span class=line><span class=cl>│   └── doc
+</span></span><span class=line><span class=cl>│       └── sysstat-12.7.5
+</span></span><span class=line><span class=cl>└── var
+</span></span><span class=line><span class=cl>    └── log
+</span></span><span class=line><span class=cl>        └── sa
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=m>11</span> directories, <span class=m>12</span> files</span></span></code></pre></td></tr></table></div></div><p>使用方法</p><div class=highlight id=id-6><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 推送工具到设备</span>
+</span></span><span class=line><span class=cl>adb push output /data/
+</span></span><span class=line><span class=cl><span class=c1># 修改权限</span>
+</span></span><span class=line><span class=cl>chmod -R <span class=m>755</span> /data/output</span></span></code></pre></td></tr></table></div></div><h2 id=工具使用 class=heading-element><a href=#%e5%b7%a5%e5%85%b7%e4%bd%bf%e7%94%a8 class=heading-mark></a>工具使用</h2><h3 id=命令行参数 class=heading-element><a href=#%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%8f%82%e6%95%b0 class=heading-mark></a>命令行参数</h3><ul><li><strong>iostat</strong></li></ul><div class=highlight id=id-7><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 基本用法</span>
+</span></span><span class=line><span class=cl>iostat <span class=o>[</span> 选项 <span class=o>]</span> <span class=o>[</span> &lt;时间间隔&gt; <span class=o>]</span> <span class=o>[</span> &lt;次数&gt; <span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-c：显示 CPU 使用情况。
+</span></span><span class=line><span class=cl>-d：显示磁盘 I/O 使用情况。
+</span></span><span class=line><span class=cl>-k：以 KB/s 为单位显示数据传输速率。
+</span></span><span class=line><span class=cl>-m：以 MB/s 为单位显示数据传输速率。
+</span></span><span class=line><span class=cl>-t：显示时间戳。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>tps 表示每秒完成的传输数量（Transactions Per Second）
+</span></span><span class=line><span class=cl>MB_read/s 表示每秒读取的数据量（Megabytes Read Per Second）
+</span></span><span class=line><span class=cl>MB_wrtn/s 表示每秒写入的数据量（Megabytes Written Per Second）
+</span></span><span class=line><span class=cl>MB_dscd/s 表示每秒丢弃（或丢失）的数据量（Megabytes Discarded Per Second）
+</span></span><span class=line><span class=cl>MB_read、MB_wrtn 和 MB_dscd 分别表示自系统启动以来的总读取、写入和丢弃的数据量（Megabytes Read/Written/Discarded）
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看 CPU 使用情况</span>
+</span></span><span class=line><span class=cl>iostat -c
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看 磁盘使用I/O使用情况</span>
+</span></span><span class=line><span class=cl>iostat -d</span></span></code></pre></td></tr></table></div></div><ul><li><strong>pidstat</strong></li></ul><div class=highlight id=id-8><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 基本用法</span>
+</span></span><span class=line><span class=cl>pidstat <span class=o>[</span> 选项 <span class=o>]</span> <span class=o>[</span> &lt;时间间隔&gt; <span class=o>]</span> <span class=o>[</span> &lt;次数&gt; <span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看所有进程的  CPU 使用情况（ -u -p ALL）</span>
+</span></span><span class=line><span class=cl>pidstat -u -p ALL
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 统计CPU使用情况</span>
+</span></span><span class=line><span class=cl>pidstat -u
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 统计内存使用情况</span>
+</span></span><span class=line><span class=cl>pidstat -r</span></span></code></pre></td></tr></table></div></div><ul><li><strong>sar</strong></li></ul><div class=highlight id=id-9><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 基本用法</span>
+</span></span><span class=line><span class=cl>sar <span class=o>[</span> 选项 <span class=o>]</span> <span class=o>[</span> &lt;时间间隔&gt; <span class=o>]</span> <span class=o>[</span> -o &lt;次数&gt; <span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 统计CPU利用率 -u [ ALL ]</span>
+</span></span><span class=line><span class=cl><span class=c1># 例如: (间隔1s, 抓6次)</span>
+</span></span><span class=line><span class=cl>sar -u ALL <span class=m>1</span> -o <span class=m>6</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 统计内存利用率 -r [ ALL ]</span>
+</span></span><span class=line><span class=cl><span class=c1># 例如: (间隔1s, 抓6次)</span>
+</span></span><span class=line><span class=cl>sar -r ALL <span class=m>1</span> -o <span class=m>6</span></span></span></code></pre></td></tr></table></div></div><h3 id=用途 class=heading-element><a href=#%e7%94%a8%e9%80%94 class=heading-mark></a>用途</h3><h4 id=分析系统 class=heading-element><a href=#%e5%88%86%e6%9e%90%e7%b3%bb%e7%bb%9f class=heading-mark></a>分析系统</h4><ul><li><p>iostat 监视系统的磁盘 I/O 使用情况</p><blockquote><p>它提供了有关磁盘读写操作、吞吐量、延迟和使用率等方面的信息。iostat 还可以帮助识别磁盘瓶颈和性能问题。</p></blockquote></li><li><p>mpstat 监视系统的 CPU 使用情况</p><blockquote><p>它提供了有关每个 CPU 核心的使用率、上下文切换、中断和软中断等信息。mpstat 还可以显示平均负载、用户态和内核态 CPU 时间等指标。</p></blockquote></li><li><p>pidstat 监视进程的 CPU 使用情况</p><blockquote><p>它可以显示每个进程的 CPU 使用率、上下文切换、内存使用情况和其他性能指标。pidstat 还可以按照进程名称、用户、PID 等进行过滤和排序。</p></blockquote></li><li><p>sar 用于收集、报告和分析系统性能数据 (System Activity Reporter )</p><blockquote><p>它可以提供有关 CPU、内存、磁盘、网络和其他子系统的统计信息</p></blockquote></li></ul><p>iostat 日志</p><div class=highlight id=id-10><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 模拟读写磁盘操作</span>
+</span></span><span class=line><span class=cl>/data <span class=c1># stressapptest -s 86400 -M 32 -f /cache/temp1 -f /cache/temp2 -m 0 -l /data/testfile &amp;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 每隔1秒打印磁盘I/O使用情况 (单位为 MB)</span>
+</span></span><span class=line><span class=cl>/data/output/bin <span class=c1># ./iostat -d -m 1</span>
+</span></span><span class=line><span class=cl>Device             tps    MB_read/s    MB_wrtn/s    MB_dscd/s    MB_read    MB_wrtn    MB_dscd
+</span></span><span class=line><span class=cl>mmcblk0          27.62         2.38         2.41         0.00      <span class=m>12938</span>      <span class=m>13072</span>          <span class=m>0</span>
+</span></span><span class=line><span class=cl>...
+</span></span><span class=line><span class=cl>Device             tps    MB_read/s    MB_wrtn/s    MB_dscd/s    MB_read    MB_wrtn    MB_dscd
+</span></span><span class=line><span class=cl>mmcblk0         185.00        16.00        17.12         0.00         <span class=m>16</span>         <span class=m>17</span>          <span class=m>0</span></span></span></code></pre></td></tr></table></div></div><p>mpstat 日志</p><div class=highlight id=id-11><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>/data/output/bin <span class=c1># ./mpstat</span>
+</span></span><span class=line><span class=cl>Linux 4.19.69-gc3a2d66af7e9 <span class=o>(</span>Chromecast<span class=o>)</span> 	01/01/70 	_aarch64_	<span class=o>(</span><span class=m>2</span> CPU<span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>01:02:21     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+</span></span><span class=line><span class=cl>01:02:21     all    7.41    0.01    8.71    0.01    0.58    0.61    0.00    0.00    0.00   82.67</span></span></code></pre></td></tr></table></div></div><p>pidstat 日志</p><div class=highlight id=id-12><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>/data/output/bin <span class=c1># ./pidstat</span>
+</span></span><span class=line><span class=cl>Linux 4.19.69-gc3a2d66af7e9 <span class=o>(</span>Chromecast<span class=o>)</span> 	01/01/70 	_aarch64_	<span class=o>(</span><span class=m>2</span> CPU<span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>00:11:22      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+</span></span><span class=line><span class=cl>00:11:22        <span class=m>0</span>         <span class=m>1</span>    0.01    0.54    0.00    0.04    0.55     <span class=m>1</span>  init
+</span></span><span class=line><span class=cl>00:11:22        <span class=m>0</span>         <span class=m>2</span>    0.00    0.00    0.00    0.00    0.00     <span class=m>1</span>  kthreadd
+</span></span><span class=line><span class=cl>00:11:22        <span class=m>0</span>         <span class=m>7</span>    0.00    0.00    0.00    0.00    0.00     <span class=m>1</span>  kworker/u4:0-events_unbound
+</span></span><span class=line><span class=cl>00:11:22        <span class=m>0</span>         <span class=m>9</span>    0.00    0.02    0.00    0.03    0.02     <span class=m>0</span>  ksoftirqd/0
+</span></span><span class=line><span class=cl>00:11:22        <span class=m>0</span>        <span class=m>10</span>    0.01    0.12    0.00    0.22    0.13     <span class=m>1</span>  rcu_preempt
+</span></span><span class=line><span class=cl>00:11:22        <span class=m>0</span>        <span class=m>11</span>    0.01    0.06    0.00    0.24    0.08     <span class=m>1</span>  rcu_sched</span></span></code></pre></td></tr></table></div></div><p>sar 日志</p><div class=highlight id=id-13><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>/data/output/bin <span class=c1># ./sar -u ALL 1 -o 6</span>
+</span></span><span class=line><span class=cl>Linux 4.19.69-gc3a2d66af7e9 <span class=o>(</span>Chromecast<span class=o>)</span> 	01/01/70 	_aarch64_	<span class=o>(</span><span class=m>2</span> CPU<span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>00:13:49        CPU      %usr     %nice      %sys   %iowait    %steal      %irq     %soft    %guest    %gnice     %idle
+</span></span><span class=line><span class=cl>00:13:50        all     10.95      0.00     12.94      0.00      0.00      0.50      1.00      0.00      0.00     74.63
+</span></span><span class=line><span class=cl>00:13:51        all     10.05      0.00     10.55      0.00      0.00      1.01      1.01      0.00      0.00     77.39
+</span></span><span class=line><span class=cl>00:13:52        all      9.09      0.00     11.62      0.00      0.00      0.51      0.51      0.00      0.00     78.28
+</span></span><span class=line><span class=cl>00:13:53        all      1.01      0.00      1.01      0.00      0.00      0.00      0.50      0.00      0.00     97.49
+</span></span><span class=line><span class=cl>00:13:54        all      9.00      0.00     10.50      0.00      0.00      1.00      0.50      0.00      0.00     79.00
+</span></span><span class=line><span class=cl>00:13:55        all     10.20      0.00     13.27      0.00      0.00      1.02      0.51      0.00      0.00     75.00
+</span></span><span class=line><span class=cl>Average:        all      8.38      0.00      9.97      0.00      0.00      0.67      0.67      0.00      0.00     80.30</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span title="更新于 2024-04-20 20:08:37">更新于 2024-04-20&nbsp;</span></div><div class=post-info-license><span><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div></div><div class=post-info-line><div class=post-info-md><span><a href=/documentation/operating-system/001-linux/099-tools/sysstat/index.md title=阅读原始文档 class=link-to-markdown>阅读原始文档</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/sysstat/ data-title=sysstat data-hashtags=sysstat><i class="fa-brands fa-twitter fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/sysstat/ data-hashtag=sysstat><i class="fa-brands fa-facebook-square fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/sysstat/ data-title=sysstat><i class="fa-brands fa-hacker-news fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/sysstat/ data-title=sysstat><i data-svg-src=/lib/simple-icons/icons/line.min.svg aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://zack4396.github.io/documentation/operating-system/001-linux/099-tools/sysstat/ data-title=sysstat><i class="fa-brands fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fa-solid fa-tags fa-fw me-1" aria-hidden=true></i><a href=/tags/sysstat/ class=post-tag title="标签 - sysstat">sysstat</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/documentation/operating-system/001-linux/099-tools/stream/ class=post-nav-item rel=next title="Linux 测试工具 stream">Linux 测试工具 stream<i class="fa-solid fa-angle-right fa-fw" aria-hidden=true></i></a></div></div></article><aside class=toc id=toc-auto aria-label=目录><h2 class=toc-title>目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden=true></i></h2><div class=toc-content id=toc-content-auto></div></aside></main><footer class=footer><div class=footer-container><div class="footer-line powered">由 <a href=https://gohugo.io/ target=_blank rel="external nofollow noopener noreferrer" title="Hugo 0.122.0"><img class=hugo-icon src=/images/hugo.min.svg alt="Hugo logo"> Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/hugo-fixit/FixIt target=_blank rel=external title="FixIt v0.3.2"><img class=fixit-icon src=/images/fixit.min.svg alt="FixIt logo"> FixIt</a></div><div class="footer-line copyright" itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw" aria-hidden=true></i>
+<span itemprop=copyrightYear>2021 - 2024</span><span class=author itemprop=copyrightHolder>
+<a href=/>Somebody</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics"><span class=site-time title=网站运行中……><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden=true></i><span class="run-times ms-1">网站运行中……</span></span></div></div></footer></div><div class=widgets><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role=button aria-label=回到顶部><i class="fa-solid fa-arrow-up fa-fw" aria-hidden=true></i><span class=variant-numeric>0%</span></div></div><div id=mask></div><div class=reading-progress-bar style=left:0;top:0;--bg-progress:#000;--bg-progress-dark:#fff></div><noscript><div class=noscript-warning>FixIt 主题在启用 JavaScript 的情况下效果最佳。</div></noscript></div><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><link rel=stylesheet href=/lib/pace/themes/blue/pace-theme-minimal.css><script src=/lib/instant-page/instantpage.min.js async defer type=module></script><script src=/lib/sharer/sharer.min.js async defer></script><script src=/lib/cookieconsent/cookieconsent.min.js defer></script><script src=/lib/cell-watermark/watermark.min.js defer></script><script src=/lib/pace/pace.min.js async defer></script><script>window.config={autoBookmark:!0,code:{copyTitle:"复制到剪贴板",editLockTitle:"锁定可编辑代码块",editUnLockTitle:"解锁可编辑代码块",editable:!0,maxShownLines:10},comment:{enable:!1},cookieconsent:{content:{dismiss:"同意",link:"了解更多",message:"本网站使用 Cookies 来改善您的浏览体验。"},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},enablePWA:!0,siteTime:"2021-12-18T16:15:22+08:00",watermark:{colspacing:30,content:'<img class="fixit-icon" src="/images/hugo-somebody.webp" alt="FixIt logo" /> Someone work notes',enable:!0,fontfamily:"inherit",fontsize:.85,height:21,opacity:.0125,rotate:15,rowspacing:60,width:150}}</script><script src=/js/theme.min.js defer></script></body></html>

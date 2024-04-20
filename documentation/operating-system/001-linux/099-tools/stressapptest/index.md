@@ -5,12 +5,8 @@
 
 &lt;!--more--&gt;
 
-
-
 [Github]: https://github.com/stressapptest/stressapptest
 [V1.0.11]: https://github.com/stressapptest/stressapptest/archive/refs/tags/v1.0.11.tar.gz
-
-
 
 ## 获取源码
 
@@ -27,8 +23,6 @@ wget https://github.com/stressapptest/stressapptest/archive/refs/tags/v1.0.11.ta
 ```bash
 tar -zxvf v1.0.11.tar.gz -C . &amp;&amp; cd stressapptest-1.0.11
 ```
-
-
 
 ## 编译源码
 
@@ -47,6 +41,7 @@ ls src/stressapptest
 # 指定 对应平台的 GCC 路径
 MY_CC=/opt/toolchain/aarch64/bin/aarch64-cros-linux-gnu-gcc
 ```
+
 ```bash
 MY_HOST=&#34;$(echo $(basename $MY_CC) | sed &#39;s/-gcc$//&#39;)&#34;
 MY_CXX=&#34;$(dirname $MY_CC)/$MY_HOST-g&#43;&#43;&#34;
@@ -57,8 +52,6 @@ make clean &amp;&amp; make
 
 ls src/stressapptest
 ```
-
-
 
 ## 工具使用
 
@@ -80,10 +73,6 @@ Usage: stressapptest [options]
 
 -W 使用更多CPU压力去压测
 ```
-
-
-
-
 
 ### 用途
 
@@ -138,12 +127,10 @@ stressapptest -s 28800 -M 256 -m 8 -W
 2024/04/10-20:10:17(PDT) Stats: Data Check: 0.00M at 0.00MB/s
 2024/04/10-20:10:17(PDT) Stats: Invert Data: 0.00M at 0.00MB/s
 2024/04/10-20:10:17(PDT) Stats: Disk: 0.00M at 0.00MB/s
-2024/04/10-20:10:17(PDT) 
+2024/04/10-20:10:17(PDT)
 2024/04/10-20:10:17(PDT) Status: PASS - please verify no corrected errors
 2024/04/10-20:10:17(PDT)
 ```
-
-
 
 #### 测试存储 (EMMC, Nand)
 
@@ -199,11 +186,10 @@ stressapptest -s 86400 -M 128 -f /cache/temp1 -f /cache/temp2 -m 0 -l /data/test
 2024/04/10-19:51:41(PDT) Stats: Data Check: 0.00M at 0.00MB/s
 2024/04/10-19:51:41(PDT) Stats: Invert Data: 0.00M at 0.00MB/s
 2024/04/10-19:51:41(PDT) Stats: Disk: 0.00M at 0.00MB/s
-2024/04/10-19:51:41(PDT) 
+2024/04/10-19:51:41(PDT)
 2024/04/10-19:51:41(PDT) Status: PASS - please verify no corrected errors
-2024/04/10-19:51:41(PDT) 
+2024/04/10-19:51:41(PDT)
 ```
-
 
 
 ---

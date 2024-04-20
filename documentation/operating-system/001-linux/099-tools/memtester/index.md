@@ -8,7 +8,7 @@
 [pyropus.ca]: https://pyropus.ca./software/memtester/
 [v4.6.0]: https://pyropus.ca./software/memtester/old-versions/memtester-4.6.0.tar.gz
 
-## 下载源码
+## 获取源码
 
 仓库地址：[pyropus.ca], 最新版本是 [V4.6.0]
 
@@ -23,8 +23,6 @@ wget https://pyropus.ca./software/memtester/old-versions/memtester-4.6.0.tar.gz
 ```bash
 tar -zxvf memtester-4.6.0.tar.gz -C . &amp;&amp; cd memtester-4.6.0
 ```
-
-
 
 ## 编译源码
 
@@ -54,8 +52,6 @@ make clean &amp;&amp; make MY_CC=$MY_CC
 ls memtester
 ```
 
-
-
 ## 工具使用
 
 ### 命令行参数
@@ -63,12 +59,10 @@ ls memtester
 ```bash
 /data # memtester --help
 Usage: memtester [-p physaddrbase [-d device]] &lt;mem&gt;[B|K|M|G] [loops]
- 
+
 - mem 申请测试内存的数量，单位默认是megabytes(兆)，也可以是B K M G。
 - loops 测试的次数，默认是无限
 ```
-
-
 
 ### 用途
 
@@ -98,7 +92,7 @@ pagesizemask is 0xfffffffffffff000
 want 16MB (16777216 bytes)
 got  16MB (16777216 bytes), trying mlock ...locked.
 Loop 1/1:
-  Stuck Address       : ok         
+  Stuck Address       : ok
   Random Value        : ok
   Compare XOR         : ok
   Compare SUB         : ok
@@ -107,19 +101,18 @@ Loop 1/1:
   Compare OR          : ok
   Compare AND         : ok
   Sequential Increment: ok
-  Solid Bits          : ok         
-  Block Sequential    : ok         
-  Checkerboard        : ok         
-  Bit Spread          : ok         
-  Bit Flip            : ok         
-  Walking Ones        : ok         
-  Walking Zeroes      : ok         
+  Solid Bits          : ok
+  Block Sequential    : ok
+  Checkerboard        : ok
+  Bit Spread          : ok
+  Bit Flip            : ok
+  Walking Ones        : ok
+  Walking Zeroes      : ok
   8-bit Writes        : ok
   16-bit Writes       : ok
 
 Done.
 ```
-
 
 
 ---

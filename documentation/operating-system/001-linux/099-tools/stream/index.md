@@ -5,10 +5,7 @@
 
 &lt;!--more--&gt;
 
-
-
 [Github]: https://github.com/jeffhammond/STREAM
-
 
 ## 获取源码
 
@@ -20,15 +17,11 @@
 wget https://github.com/jeffhammond/STREAM/archive/refs/heads/master.zip
 ```
 
-
-
 ### 解压
 
 ```bash
 unzip master.zip &amp;&amp; cd STREAM-master
 ```
-
-
 
 ## 编译源码
 
@@ -48,9 +41,9 @@ unzip master.zip &amp;&amp; cd STREAM-master
 
 {{&lt; /admonition &gt;}}
 
-  | -DSTREAM_ARRAY_SIZE 参数       | 含义                                                         |
-  | ------------------------------ | ------------------------------------------------------------ |
-  | `-DSTREAM_ARRAY_SIZE=0xa00000` | 每个测试数组的成员个数为 `0xa00000`（表示 10MB），有`a[]`,`b[]`,`c[]`三个数组，&lt;br /&gt;它们的数据类型均为双精度浮点数 `double`（占用 8 字节）。&lt;br /&gt;因此，进行测试时，需要申请总共 10MB * 3 * 8 = 240MB 的内存空间 |
+| -DSTREAM_ARRAY_SIZE 参数       | 含义                                                                                                                                                                                                              |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-DSTREAM_ARRAY_SIZE=0xa00000` | 每个测试数组的成员个数为 `0xa00000`（表示 10MB），有`a[]`,`b[]`,`c[]`三个数组，&lt;br /&gt;它们的数据类型均为双精度浮点数 `double`（占用 8 字节）。&lt;br /&gt;因此，进行测试时，需要申请总共 10MB _ 3 _ 8 = 240MB 的内存空间 |
 
 1. `STREAM_ARRAY_SIZE * 24` 需要小于系统可用内存 (可使用 free 查看)
 
@@ -80,8 +73,6 @@ unzip master.zip &amp;&amp; cd STREAM-master
 
 &gt; 数组的偏移 (默认值是 0)
 
-
-
 ### 编译 x86
 
 {{&lt; admonition type=warning title=&#34;避免 OOM 或者 Segmentation fault, STREAM_ARRAY_SIZE 不能设置过大&#34; open=false &gt;}}
@@ -99,8 +90,6 @@ gcc \
   -DOFFSET=4096 \
   stream.c -o stream
 ```
-
-
 
 ### 编译 aarch64
 
@@ -125,15 +114,11 @@ $MY_CC -static \
   stream.c -o stream
 ```
 
-
-
 ## 工具使用
 
 ### 命令行参数
 
 无
-
-
 
 ### 用途
 
@@ -165,8 +150,6 @@ export OMP_NUM_THREADS=2
 
 /data # stream
 ```
-
-
 
 日志
 
@@ -206,7 +189,6 @@ Triad:          53983.6     0.046919     0.044753     0.054359
 Solution Validates: avg error less than 1.000000e-13 on all three arrays
 -------------------------------------------------------------
 ```
-
 
 
 ---
